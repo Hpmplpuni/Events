@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Services</a></li>
+            <li><a href="#" onclick="openAuth()">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Events PRAKRUTHI</h1>
+        <p><marquee behavior="scroll" direction="left">Plan your dream wedding with Nature!</marquee></p>
+    </div>
+
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/918088304390" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Login/Registration Modal -->
+    <div id="authModal" class="login-modal" style="display: none;">
+        <div class="login-modal-content">
+            <span class="close-btn" onclick="closeAuth()">&times;</span>
+            <h2 id="modalTitle">Login</h2>
+            
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <input type="text" id="username" placeholder="Username" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+            
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+            
+            <!-- Registration Form -->
+            <form id="registerForm" style="display: none;" onsubmit="handleRegister(event)">
+                <input type="text" id="regUsername" placeholder="Username" required><br>
+                <input type="password" id="regPassword" placeholder="Password" required><br>
+                <button type="submit">Register</button>
+            </form>
+            
+            <p style="display: none;" id="registerMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth1.js"></script> <!-- Include the separate JavaScript file -->
+
+</body>
+</html>
